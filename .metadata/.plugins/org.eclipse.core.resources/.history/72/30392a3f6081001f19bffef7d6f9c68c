@@ -1,0 +1,14 @@
+package com.rainey.api.Dao;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+
+import com.rainey.api.Model.BankAccunt;
+
+@Mapper
+public interface AccuntRepository {
+	@Insert("INSERT INTO bankAccunt(username,deposit) VALUES(#{username},#{deposit})")
+	@Options(useGeneratedKeys = true, keyProperty = "id")
+	void createAccunt(BankAccunt bankAccunt);
+}

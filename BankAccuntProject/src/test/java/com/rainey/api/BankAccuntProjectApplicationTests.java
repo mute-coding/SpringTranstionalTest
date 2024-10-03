@@ -1,0 +1,50 @@
+package com.rainey.api;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.rainey.api.Dao.AccuntRepository;
+import com.rainey.api.Model.BankAccunt;
+import com.rainey.api.Service.BankAccuntService;
+
+@SpringBootTest
+class BankAccuntProjectApplicationTests {
+	@Mock
+	private AccuntRepository accuntRepository;
+	@InjectMocks
+	private BankAccuntService bankAccuntService;
+	 @BeforeEach
+	    void setUp() {
+	        MockitoAnnotations.openMocks(this); // 初始化 Mockito 模擬對象
+	    }
+
+	@Test
+	void testCreateAccunt() {
+		BankAccunt user01 = new BankAccunt();
+		user01.setUsername("ado Wang");
+		user01.setDeposit(1000L);
+		 // 模擬 accuntRepository 的 createAccunt 方法不拋出異常
+        doNothing().when(accuntRepository).createAccunt(user01);
+
+        // 執行測試方法
+        bankAccuntService.createAccunt(user01);
+
+        // 驗證 createAccunt 是否被調用一次
+        assertNotNull(user01);
+        assertEquals("ado Wang", user01.getUsername());
+        assertEquals(1000L, user01.getDeposit());
+        verify(accuntRepository, times(1)).createAccunt(user01);
+        System.out.println("output create item:"+user01.getId()+user01.getUsername()+user01.getDeposit());
+	}
+
+}

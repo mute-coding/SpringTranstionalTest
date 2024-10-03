@@ -1,0 +1,5 @@
+package com.rainey.api.GlobalException;
+
+public class GlobalExceptionHandler {
+
+}

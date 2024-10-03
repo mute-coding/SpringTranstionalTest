@@ -1,0 +1,32 @@
+package com.rainey.api;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.rainey.api.Dao.AccuntRepository;
+import com.rainey.api.Model.BankAccunt;
+import com.rainey.api.Service.BankAccuntService;
+
+@SpringBootTest
+class BankAccuntProjectApplicationTests {
+	@Mock
+	private AccuntRepository accuntRepository;
+	@InjectMocks
+	private BankAccuntService bankAccuntService;
+	 @BeforeEach
+	    void setUp() {
+	        MockitoAnnotations.openMocks(this); // 初始化 Mockito 模擬對象
+	    }
+
+	@Test
+	void contextLoads() {
+		BankAccunt user01 = new BankAccunt();
+		user01.setUsername("ado Wang");
+		user01.setDeposit(1000L);
+	}
+
+}

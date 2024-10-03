@@ -1,0 +1,5 @@
+spring.application.name=BankAccuntProject
+spring.datasource.url=jdbc:mysql://localhost:3306/TransTest?useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=mutemute1085123
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver

@@ -1,0 +1,10 @@
+package com.rainey.api.Dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.rainey.api.Model.BankAccunt;
+
+@Mapper
+public interface AccuntRepository {
+	int createAccunt(BankAccunt bankAccunt);
+}

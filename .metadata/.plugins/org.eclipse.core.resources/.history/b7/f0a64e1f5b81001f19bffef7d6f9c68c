@@ -1,0 +1,5 @@
+package com.rainey.api.Model;
+
+public class BankAccunt {
+
+}

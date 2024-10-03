@@ -1,0 +1,13 @@
+package com.rainey.api;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BankAccuntProjectApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

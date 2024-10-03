@@ -1,0 +1,17 @@
+package com.rainey.api.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rainey.api.Dao.AccuntRepository;
+import com.rainey.api.Model.BankAccunt;
+
+@Service
+public class BankAccuntService {
+	@Autowired
+	private AccuntRepository accuntRepository;
+	public void createAccunt(BankAccunt bankAccunt) {
+		accuntRepository.createAccunt(bankAccunt);
+	}
+	
+}

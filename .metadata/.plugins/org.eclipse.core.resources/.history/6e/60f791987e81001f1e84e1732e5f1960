@@ -1,0 +1,7 @@
+package com.rainey.api.Exception;
+
+public class InsufficientDepositException extends RuntimeException {
+	public InsufficientDepositException(String message) {
+		super(message);
+	}
+}

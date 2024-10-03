@@ -1,0 +1,6 @@
+package com.rainey.api.Exception;
+
+public class LessAccuntException extends RuntimeException {
+	
+
+}

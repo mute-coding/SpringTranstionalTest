@@ -1,0 +1,22 @@
+package com.rainey.api;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.rainey.api.Dao.AccuntRepository;
+import com.rainey.api.Service.BankAccuntService;
+
+@SpringBootTest
+class BankAccuntProjectApplicationTests {
+	@Mock
+	private AccuntRepository accuntRepository;
+	@InjectMocks
+	private BankAccuntService bankAccuntService;
+
+	@Test
+	void contextLoads() {
+	}
+
+}

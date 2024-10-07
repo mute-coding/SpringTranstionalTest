@@ -21,7 +21,11 @@ public class BankAccuntService {
 			accuntRepository.createAccunt(bankAccunt);
 		}
 	}
-	
-	
+	public void transferAmount(String from,Long amount,String to) {
+		accuntRepository.reduceDeposit(from, amount);
+		accuntRepository.increaseDeposit(to, amount);
+		
+		
+	}
 
 }

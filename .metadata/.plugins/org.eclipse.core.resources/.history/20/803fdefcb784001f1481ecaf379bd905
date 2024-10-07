@@ -1,0 +1,33 @@
+package com.rainey.api.Model;
+
+public class TransferRequest {
+	String from;
+	Long Amount;
+	String to;
+	public TransferRequest() {}
+	public TransferRequest(String from, Long amount, String to) {
+		super();
+		this.from = from;
+		Amount = amount;
+		this.to = to;
+	}
+	public String getFrom() {
+		return from;
+	}
+	public void setFrom(String from) {
+		this.from = from;
+	}
+	public Long getAmount() {
+		return Amount;
+	}
+	public void setAmount(Long amount) {
+		Amount = amount;
+	}
+	public String getTo() {
+		return to;
+	}
+	public void setTo(String to) {
+		this.to = to;
+	}
+	
+}

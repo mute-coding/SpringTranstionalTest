@@ -18,8 +18,9 @@ public interface AccuntRepository {
 	void createAccunt(BankAccunt bankAccunt);
 	@Select("SELECT * FROM bankAccunt WHERE id = #{id} ")
 	List<BankAccunt> getAccunt(@Param("id") int id);
-	@Update("UPDATE bankAccunt SET deposit = deposit + #{amount} WHERE id = #{id} ")
-	void increaseDedosit(@Param("id") int id, @Param("amount") Long amount );
-	@Update("UPDATE bankAccunt SET deposit = deposit - #{amount} WHERE id = #{id} ")
-	void reduceDedosit(@Param("id") int id, @Param("amount") Long amount);
+	@Update("UPDATE bankAccunt SET deposit = deposit + #{amount} WHERE username = #{username} ")
+	void increaseDeposit(@Param("username") String username, @Param("amount") Long amount);
+
+	@Update("UPDATE bankAccunt SET deposit = deposit - #{amount} WHERE username = #{username} ")
+	void reduceDeposit(@Param("username") String username, @Param("amount") Long amount);
 }
